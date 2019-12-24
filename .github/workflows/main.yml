@@ -41,7 +41,7 @@ jobs:
     - name: Install node
       uses: actions/setup-node@v1
       with:
-       node-version: '10.x'
+       node-version: '12.x'
     - name: Install Python
       uses: actions/setup-python@v1
       with:
@@ -123,14 +123,18 @@ jobs:
         python -m jupyterlab.browser_check
 
   build_all:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
     - name: Checkout
       uses: actions/checkout@v1
     - name: Install node
       uses: actions/setup-node@v1
       with:
-       node-version: '10.x'
+       node-version: '12.x'
     - name: Install Python
       uses: actions/setup-python@v1
       with:
@@ -143,6 +147,8 @@ jobs:
     - name: Build all the extensions
       run: |
         jlpm build-ext
-        jlpm lint:check
         jlpm link-ext
         jlpm build-jlab
+    - name: Lint
+      run: jlpm lint:check
+

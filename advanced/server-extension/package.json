@@ -33,7 +33,7 @@
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
     "clean:labextension": "rimraf server_extension/labextension",
     "clean:all": "jlpm run clean:lib && jlpm run clean:labextension",
-    "link": "jupyter labextension link . --no-build",
+    "link": "jupyter labextension install . --no-build --debug",
     "prepare": "jlpm run clean && jlpm run build",
     "tslint": "tslint --fix -c tslint.json --project tsconfig.json \"**/*{.ts,.tsx}\"",
     "tslint:check": "tslint -c tslint.json --project tsconfig.json \"**/*{.ts,.tsx}\"",
