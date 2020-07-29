@@ -40,10 +40,10 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "@jupyterlab/application": "^2.0.0",
-    "@jupyterlab/coreutils": "^4.0.0",
-    "@jupyterlab/launcher": "^2.0.0",
-    "@jupyterlab/services": "^5.0.0"
+    "@jupyterlab/application": "^3.0.0-alpha.0",
+    "@jupyterlab/coreutils": "^5.0.0-alpha.0",
+    "@jupyterlab/launcher": "^3.0.0-alpha.0",
+    "@jupyterlab/services": "^6.0.0-alpha.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.21.0",
